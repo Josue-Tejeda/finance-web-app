@@ -4,7 +4,7 @@
 {% block content %}
 
 <h1 class="mt-4 mb-6 text-2xl leading-none tracking-tight text-white md:text-3xl lg:text-4xl">
-    Welcome to the Personal BudgetTrak
+    Welcome to the BudgetTrak
 </h1>
 
 
@@ -20,11 +20,25 @@
         </p>
     </div>
 
+    <div class="border mb-6"></div>
+
+    <div class="mb-3">
+        <a href="{% url 'transactions-list' %}" 
+        class="font-medium text-white hover:underline flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 me-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+            </svg>
+          
+            
+            View Transactionst
+        </a>
+    <div/>
+
 {% else %}
 
 {% endif %}
 
 
-<p class="text-white">{% lorem %}</p>
+<p class="text-white"></p>
 
 {% endblock content %}
