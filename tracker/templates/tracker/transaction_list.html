@@ -1,5 +1,4 @@
 {% extends 'tracker/base.html' %}
-{% load widget_tweaks %}
 
 
 {% block head_title %}
@@ -20,51 +19,7 @@
 </h1>
 
 <div class="relative overflow-x-auto text-white">
-    <div class="flex flex-col md:grid md:grid-cols-4 md:gap-4" id="transaction-container">
-        <div class="col-span-1">
-            <div class="">
-                <form method="GET">
-                    <div class="mb-2 from-control">
-                        {{ filter.form.transaction_type|add_label_class:"label text_white" }}
-                        {% render_field filter.form.transaction_type class="select bg-gray-50 text-gray-900" %}
-                    </div>
-            
-                    <button class="btn btn-success">
-                        Filter
-                    </button>
-                <form/>
-    
-            </div>
-        </div>
-        <div class="col-span-3">
-            {% if filter.qs %}
-                <table class="table">
-                    <thead class="text-xs text-white uppercase">
-                        <tr>
-                            <th class="px-6 py-3">Date</th>
-                            <th class="px-6 py-3">Category</th>
-                            <th class="px-6 py-3">Type</th>
-                            <th class="px-6 py-3">Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for transaction in filter.qs %}
-                            <tr>
-                                <td>{{ transaction.date|date:"M. j, Y - H:i" }}</td>
-                                <td>{{ transaction.category }}</td>
-                                <td>{{ transaction.type }}</td>
-                                <td>{{ transaction.amount }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            {% else %}
-                <p class="text-2x1 text-white">
-                    No transactions found
-                </p>
-            {% endif %}
-        </div>
-    </div>
+    {% include 'tracker/partials/transactions-container.html' %}
 </div>
 
 {% endblock content %}
