@@ -13,6 +13,18 @@
                     {{ filter.form.transaction_type|add_label_class:"label text_white" }}
                     {% render_field filter.form.transaction_type class="select bg-gray-50 text-gray-900" %}
                 </div>
+                <div class="mb-2 from-control">
+                    {{ filter.form.start_date|add_label_class:"label text_white" }}
+                    {% render_field filter.form.start_date class="input bg-gray-50 text-gray-900" %}
+                </div>
+                <div class="mb-2 from-control">
+                    {{ filter.form.end_date|add_label_class:"label text_white" }}
+                    {% render_field filter.form.end_date class="input bg-gray-50 text-gray-900" %}
+                </div>
+                <div class="mb-2 from-control">
+                    {{ filter.form.category|add_label_class:"label text_white" }}
+                    {% render_field filter.form.category class="text-green-400 border-gray-300 rounded focus:ring-green-400" %}
+                </div>
         
                 <button class="btn btn-success">
                     Filter
@@ -46,9 +58,15 @@
             </table>
         </div>
 
-        <h1 class="mt-8 mb-2 prose prose-2xl text-white">
-            Transactions
-        </h1>
+        <div class="flex justify-between mt-4 mb-6">
+            <h1 class="prose prose-2xl text-white">
+                Transactions
+            </h1>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+        </div>
+        
 
         {% if filter.qs %}
             <table class="table">
