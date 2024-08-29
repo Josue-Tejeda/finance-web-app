@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from .managers import TransactionQuerySet
 
 from tracker import data
 
@@ -27,8 +28,11 @@ class Transaction(models.Model):
     
     date = models.DateTimeField()
     
+    objects = TransactionQuerySet.as_manager()
+    
     def __str__(self):
         return f'{self.type} of {self.amount} on {self.date} by {self.user}'
     
     class Meta:
         ordering = ['-date']
+
