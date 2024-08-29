@@ -58,13 +58,19 @@
             </table>
         </div>
 
-        <div class="flex justify-between mt-4 mb-6">
+        <div class="flex justify-between items-center mt-4 mb-6">
             <h1 class="prose prose-2xl text-white">
                 Transactions
             </h1>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
+            <a
+            hx-get="{% url 'create-transaction' %}"
+            hx-push-url="true"
+            hx-target="#transaction-block"
+            class="cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </a>
         </div>
         
 

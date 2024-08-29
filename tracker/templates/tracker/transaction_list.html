@@ -8,16 +8,16 @@
 
 {% block content %}
 
-<h1 class="mt-4 mb-6 text-2xl leading-none tracking-tight text-white md:text-3xl lg:text-4xl flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 me-2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-    </svg>
-    
-    
-    Transactions List
-</h1>
+<div class="relative overflow-x-auto text-white" id="transaction-block"">
+    <h1 class="mt-4 mb-6 text-2xl leading-none tracking-tight text-white md:text-3xl lg:text-4xl flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 me-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
+        </svg>
+        
+        
+        Transactions List
+    </h1>
 
-<div class="relative overflow-x-auto text-white">
     {% include 'tracker/partials/transactions-container.html' %}
 </div>
 
